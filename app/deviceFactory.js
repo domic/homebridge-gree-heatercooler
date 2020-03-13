@@ -248,7 +248,11 @@ class Device {
     };
 
     getPower() {
-        return this.device.props[cmd.power.code];
+        if (this.device.props.hasOwnProperty(cmd.power.code)) {
+            return this.device.props[cmd.power.code];
+        } else {
+            return 0;
+        }
     };
 
     /**
@@ -265,7 +269,11 @@ class Device {
     };
 
     getTemp() {
-        return this.device.props[cmd.temperature.code];
+        if (this.device.props.hasOwnProperty(cmd.temperature.code)) {
+            return this.device.props[cmd.temperature.code];
+        } else {
+            return 0;
+        }
     };
 
     /**
@@ -281,7 +289,11 @@ class Device {
     };
 
     getMode() {
-        return this.device.props[cmd.mode.code];
+        if (this.device.props.hasOwnProperty(cmd.mode.code)) {
+            return this.device.props[cmd.mode.code];
+        } else {
+            return 0;
+        }
     };
 
     /**
@@ -297,7 +309,11 @@ class Device {
     };
 
     getFanSpeed() {
-        return this.device.props[cmd.fanSpeed.code];
+        if (this.device.props.hasOwnProperty(cmd.fanSpeed.code)) {
+            return this.device.props[cmd.fanSpeed.code];
+        } else {
+            return 0;
+        }
     };
 
     /**
@@ -313,11 +329,19 @@ class Device {
     };
 
     getSwingVert() {
-        return this.device.props[cmd.swingVert.code];
+        if (this.device.props.hasOwnProperty(cmd.swingVert.code)) {
+            return this.device.props[cmd.swingVert.code];
+        } else {
+            return 0;
+        }
     };
 
     getRoomTemp() {
-        return this.device.props[cmd.TemSen.code];
+        if (this.device.props.hasOwnProperty(cmd.TemSen.code)) {
+            return this.device.props[cmd.TemSen.code];
+        } else {
+            return 0;
+        }
     };
 };
 
